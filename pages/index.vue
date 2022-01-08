@@ -6,8 +6,17 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+// import { PrismaClient } from "@prisma/client";
+// const prisma = new PrismaClient();
 
 export default defineComponent({
-  // ...
+/*    async asyncData() {
+    const posts = await prisma.post.findMany({
+      include: {
+        author: true,
+      },
+    });
+    return { posts };
+  }, */
 });
 </script>

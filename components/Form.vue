@@ -38,9 +38,9 @@
 </template>
 
 <script setup>
-    const config = useRuntimeConfig()
+    /* const config = useRuntimeConfig()
     config.sbUrl
-    config.sbKey
+    config.sbKey */
 
     const DBResponse = ref([])
 

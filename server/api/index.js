@@ -11,6 +11,6 @@ app.use(express.json())
  * logic for our api will go here
  */
 export default {
-    path: '/server/api',
+    path: '/server/api/index.js',
     handler: app
 }
