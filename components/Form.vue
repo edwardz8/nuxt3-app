@@ -38,6 +38,10 @@
 </template>
 
 <script setup>
+    const config = useRuntimeConfig()
+    config.sbUrl
+    config.sbKey
+
     const DBResponse = ref([])
 
     const email = ref('')

@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id          Int       @id @default(autoincrement())
+  title       String
+  content     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  published   Boolean   @default(false)
+  author      User?     @relation(fields: [authorId], references: [id])
+  authorId    Int?
+  favoritedBy User[]    @relation("UserFavorites", references: [id])
+  comments    Comment[]
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  name      String?
+  posts     Post[]
+  postId    Int?      @unique
+  Comment   Comment[]
+  favorites Post[]    @relation("UserFavorites", references: [id])
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  body      String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    Int
+  author    User?    @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  Int
+}
+
+model pitchers {
+  name              String   @db.VarChar(20)
+  team              String?  @db.VarChar(20)
+  wins              Int?
+  losses            Int?
+  era               Decimal? @db.Decimal
+  games             Int?
+  games_started     Int?
+  saves             Int?
+  innings_pitched   Decimal? @db.Decimal
+  hits              Int?
+  earned_runs       Int?
+  home_runs_allowed Int?
+  strikeouts        Int?
+  walks             Int?
+  whip              Decimal? @db.Decimal
+  ks_per_nine       Decimal? @db.Decimal
+  walks_per_nine    Decimal? @db.Decimal
+  fip               Decimal? @db.Decimal
+  war               Decimal? @db.Decimal
+  ra_nine_war       Decimal? @db.Decimal
+  adp               Decimal? @db.Decimal
+  id                Int      @id
+}
+
+model batters {
+  name                         String   @db.VarChar(30)
+  team                         String?  @db.VarChar(30)
+  games                        Int?
+  plate_appearances            Int?
+  at_bats                      Int?
+  hits                         Int?
+  doubles                      Int?
+  triples                      Int?
+  home_runs                    Int?
+  runs                         Int?
+  rbi                          Int?
+  walks                        Int?
+  strikeouts                   Int?
+  hit_by_pitch                 Int?
+  stolen_bases                 Int?
+  caught_stealing              Int?
+  negative_one                 String?  @db.VarChar(20)
+  batting_average              Decimal? @db.Decimal
+  on_base_percentage           Decimal? @db.Decimal
+  slugging_percentage          Decimal? @db.Decimal
+  on_base_plus_slugging        Decimal? @db.Decimal
+  weighted_on_base_average     Decimal? @db.Decimal
+  negative_one_one             String?  @db.VarChar(20)
+  weighted_runs_created_plus   Int?
+  base_running                 Decimal? @db.Decimal
+  fielding_percentage          Decimal? @db.Decimal
+  negative_one_two             String?  @db.VarChar(20)
+  offensive_runs_above_average Decimal? @db.Decimal
+  defensive_runs_above_average Decimal? @db.Decimal
+  war                          Decimal? @db.Decimal
+  negative_omit                String?  @db.VarChar(20)
+  adp                          Decimal? @db.Decimal
+  id                           Int      @id
+}

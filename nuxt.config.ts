@@ -15,4 +15,11 @@ export default defineNuxtConfig({
     css: [
         "~/assets/css/tailwind.css"
     ],
+    serverMiddleware: [
+        '~/server/api/index.js'
+    ],
+    publicRuntimeConfig: {
+        sbUrl: process.env.SUPABASE_URL,
+        sbKey: process.env.SUPABASE_KEY,
+      }
 })
