@@ -11,6 +11,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
 /*    async asyncData() {
+    <b>Posts:</b> {{ JSON.stringify(posts, null, 5) }}
     const posts = await prisma.post.findMany({
       include: {
         author: true,

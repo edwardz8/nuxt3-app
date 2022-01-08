@@ -31,23 +31,20 @@
         >
           Subscribe
         </button>
-        <p class="text-xs text-gray-500 mt-3"></p>
+        <p class="text-xs text-gray-500 mt-3">
+        </p>
       </div>
     </div>
   </form>
 </template>
 
 <script setup>
-    /* const config = useRuntimeConfig()
-    config.sbUrl
-    config.sbKey */
-
     const DBResponse = ref([])
 
     const email = ref('')
 
     async function postToDB() {
-        const result = await fetch(`/server/api/subscribe?email=${email.value}`)
+        const result = await fetch(`/api/subscribe?email=${email.value}`)
         const data = await result.json()
         DBResponse.value = data
     }

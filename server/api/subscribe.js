@@ -9,7 +9,7 @@ export default async (req, res) => {
     let response;
     const { email } = queryObject;
     if (email) {
-      const { data } = await supabase.from("Subscribers").upsert({
+      const { data } = await supabase.from("Subscriber").upsert({
         email: email,
       });
       response = data;
