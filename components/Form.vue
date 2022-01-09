@@ -40,11 +40,15 @@
 <script setup>
     const DBResponse = ref([])
 
+    const router = useRouter()
+
     const email = ref('')
 
     async function postToDB() {
         const result = await fetch(`/api/subscribe?email=${email.value}`)
         const data = await result.json()
         DBResponse.value = data
+        email.value = ''
+        router.push('/')
     }
 </script>
