@@ -1,15 +1,14 @@
 <template>
   <form @submit.prevent="postToDB" class="text-gray-600 body-font">
-    <div class="container px-5 py-20 mx-auto flex flex-wrap">
-      <div class="left 2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-1/2 lg:pr-0 pr-0 mt-6">
+    <div class="container mx-auto py-20 px-4 flex flex-wrap">
+      <div class="left 2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-1/2 lg:pr-0 pr-2 mt-4">
         <h1 class="title-font font-medium text-3xl text-gray-900">
-          Subscribe to newsletter ⚾ 
+          Subscribe to the fungo fantasy baseball newsletter ⚾ 
         </h1>
-        <p class="leading-relaxed mt-4">
-          Weekly fantasy baseball newsletter straight to your inbox. Only relevant content
-          will be sent.
+        <p class="leading-relaxed mt-4 mb-4">
+          Sign up to receive the fungo newsletter, an educational & statistically informed approach to dynasty and daily fantasy baseball, straight to your inbox.
         </p>
-       <!--  <img src="../assets/stadium-trees-phone.png" /> -->
+       <img src="../assets/stadium-trees-phone.png" />
       </div>
       <div
         class="lg:w-1/2 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full"
