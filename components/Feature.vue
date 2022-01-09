@@ -13,9 +13,9 @@
         </dl>
       </div>
       <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-        <img src="/baseball_image_2.jpg" alt="baseball" class="bg-gray-100 rounded-lg" />
-        <img src="/baseballs_image.jpg" alt="baseball" class="bg-gray-100 rounded-lg" />
-        <img src="/baseball_field_pitcher.jpg" alt="baseball" class="bg-gray-100 rounded-lg" />
+        <img src="/images/baseball_image_2.jpg" alt="baseball" class="bg-gray-100 rounded-lg" />
+        <img src="/images/baseballs_image.jpg" alt="baseball" class="bg-gray-100 rounded-lg" />
+        <img src="/images/baseball_field_pitcher.jpg" alt="baseball" class="bg-gray-100 rounded-lg" />
       </div>
     </div>
   </div>

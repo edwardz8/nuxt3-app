@@ -8,7 +8,7 @@
         <p class="leading-relaxed mt-4 mb-4">
           Sign up to receive the fungo newsletter, an educational & statistically informed approach to dynasty and daily fantasy baseball, straight to your inbox.
         </p>
-       <img src="../public/stadium-trees-phone.png" />
+       <img src="/images/stadium-trees-phone.png" />
       </div>
       <div
         class="lg:w-1/2 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full"
