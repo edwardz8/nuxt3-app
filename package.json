@@ -3,7 +3,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build",
+    "build": "nuxt build",
     "start": "nuxi start"
   },
   "devDependencies": {
