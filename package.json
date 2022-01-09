@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "nuxi start",
-    "generate": "nuxi generate"
+    "start": "nuxi start"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
