@@ -6,7 +6,7 @@
           Subscribe to the fungo fantasy baseball newsletter ⚾ 
         </h1>
         <p class="leading-relaxed mt-4 mb-4">
-          Sign up to receive the fungo newsletter -- an educational & statistically informed approach to dynasty and daily fantasy baseball -- straight to your inbox!
+          Sign up to receive the fungo newsletter -- an educational, entertaining & statistically informed approach to dynasty and daily fantasy baseball -- straight to your inbox!
         </p>
        <img :src="'/images/stadium-trees-phone.png'" />
       </div>

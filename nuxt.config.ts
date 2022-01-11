@@ -2,6 +2,7 @@ import { defineNuxtConfig } from 'nuxt3'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+    meta: { title: 'fungo' },
     build: {
         postcss: {
             postcssOptions: {
@@ -14,9 +15,5 @@ export default defineNuxtConfig({
     },
     css: [
         "~/assets/css/tailwind.css"
-    ],
-    /* publicRuntimeConfig: {
-        sbUrl: process.env.SUPABASE_URL,
-        sbKey: process.env.SUPABASE_KEY,
-      } */
+    ]
 })
