@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="w-full max-w-xs">
     <form onsubmit="return false">
       <input type="text" placeholder="name" v-model="name" :class="{ error: signupFailed }" />
       <input type="text" placeholder="email" v-model="email" :class="{ error: signupFailed }" />

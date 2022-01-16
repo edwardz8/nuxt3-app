@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 + Prisma
 
 We recommend to look at the [documentation](https://v3.nuxtjs.org).
 
@@ -7,7 +7,7 @@ We recommend to look at the [documentation](https://v3.nuxtjs.org).
 Make sure to install the dependencies
 
 ```bash
-yarn install
+yarn install or npm i 
 ```
 
 ## Development
@@ -15,7 +15,7 @@ yarn install
 Start the development server on http://localhost:3000
 
 ```bash
-yarn dev
+yarn dev or npm run dev
 ```
 
 ## Production
@@ -23,7 +23,5 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+yarn build or npm run build
 ```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
