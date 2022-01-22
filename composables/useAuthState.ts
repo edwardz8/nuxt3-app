@@ -26,7 +26,7 @@ const _defaultAuthState: _AuthState = {
 export default function useAuthState(): AuthState {
     const authStateStorage = useCookie<string>(
         'authStateStorage', {
-        maxAge: 149 * 24 * 3600,
+        maxAge: 149*24*3600,
         default: () => JSON.stringify(_defaultAuthState)
     }
     )

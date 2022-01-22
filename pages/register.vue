@@ -48,7 +48,7 @@
           Sign Up
         </button>
         <p class="inline-block align-baseline text-sm text-blue-900 hover:text-blue-800">
-          <nuxt-link :to="{ name: 'index' }"> Already a member? Login. </nuxt-link>
+          <nuxt-link :to="{ name: 'login' }"> Already a member? Login. </nuxt-link>
         </p>
       </div>
     </form>

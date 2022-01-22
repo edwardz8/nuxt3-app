@@ -15,14 +15,14 @@ export default async function userAuthMiddleware(req: IncomingMessage, res: Serv
             const payload = jwt.verify(token, process.env.JWT_SECRET)
 
             if (payload && typeof payload == 'object') {
-                const user = await prisma.user.findUnique({ where: { id: payload.id } })
+                const user = await prisma.user.findUnique({ where: { id: payload.userId } })
 
                 if (!user || user.email != payload.email) {
                     return sendError(res, createError(403))
                 }
 
                 req.user = {
-                    id: payload.id,
+                    id: payload.userId,
                     name: payload.name,
                     email: payload.email
                 }

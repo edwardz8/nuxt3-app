@@ -15,14 +15,10 @@ export default async function viewProfile(req: IncomingMessage, res: ServerRespo
     }
 
     const user = await prisma.user.findUnique({
-        select: {
-            email: true,
-            id: true,
-            name: true,
-            password: true,
+        include: {
             favorites: true,
             posts: {
-                select: {
+                include: {
                     favoritedBy: true,
                     author: true,
                     comments: {

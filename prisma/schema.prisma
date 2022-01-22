@@ -25,7 +25,6 @@ model User {
   email     String    @unique
   name      String?
   password  String
-  postId    Int?      @unique
   Comment   Comment[]
   posts     Post[]
   favorites Post[]    @relation("UserFavorites")

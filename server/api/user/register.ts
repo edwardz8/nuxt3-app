@@ -39,7 +39,7 @@ export default async function register(req: IncomingMessage, res: ServerResponse
     }})
 
     const token = jwt.sign({
-        id: user.id,
+        userId: user.id,
         name: user.name,
         email: user.email 
     }, process.env.JWT_SECRET)
