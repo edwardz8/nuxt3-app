@@ -2,7 +2,6 @@ import { IncomingMessage, ServerResponse } from 'http'
 import { isMethod, sendError } from 'h3'
 import { createError } from '~/server/error-helpers'
 import Prisma from '@prisma/client'
-import userAuthMiddleware from '~~/server/middleware/user-auth';
 
 const prisma = new Prisma.PrismaClient();
 

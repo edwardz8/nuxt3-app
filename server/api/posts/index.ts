@@ -2,7 +2,6 @@ import { IncomingMessage, ServerResponse } from 'http'
 import { isMethod, sendError, useBody } from 'h3'
 import { createError } from '~/server/error-helpers'
 import Prisma from '@prisma/client'
-import { stringifyStyle } from '@vue/shared';
 
 const prisma = new Prisma.PrismaClient();
 
@@ -19,11 +18,11 @@ export default async function posts(req: IncomingMessage, res: ServerResponse) {
         if (isMethod(req, 'GET')) {
             const posts = await prisma.post.findMany({
                 where: req.user ? undefined : {
-                    published: true,
+                    published: true
                 },
                 /* include: {
-                    comments: { select: { id: true, body: true, author: true, authorId: true }},
-                    favoritedBy: { select: { id: true, email: true, postId: true,  } }
+                    comments: { select: { id: true, body: true, author: true, authorId: true } },
+                    favoritedBy: { select: { id: true, email: true, postId: true, } }
                 } */
             })
 
@@ -54,6 +53,8 @@ export default async function posts(req: IncomingMessage, res: ServerResponse) {
                 data: {
                     published: input.published,
                     title: '',
+                    content: '',
+                    id: postId,
                     authorId: req.user.id
                 },
             })
@@ -65,11 +66,7 @@ export default async function posts(req: IncomingMessage, res: ServerResponse) {
     /* /api/posts/:id */
     else {
         const post = await prisma.post.findUnique({
-            where: Object.assign({ id: postId }),
-            include: {
-                comments: { select: { id: true, body: true, author: true, postId: true } },
-                favoritedBy: { select: { id: true, email: true, name: true, postId: true } },
-            }
+            where: Object.assign({ id: postId })
         })
 
         if (!post || (!req.user && !post.published)) {
@@ -82,6 +79,9 @@ export default async function posts(req: IncomingMessage, res: ServerResponse) {
         else if (isMethod(req, 'POST')) {
             const input = await useBody<{
                 published?: boolean,
+                title: string,
+                id: number,
+                content: string,
                 comments?: {
                     postId: number,
                     id: number,
