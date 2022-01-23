@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxt build",
-    "start": "nuxi start"
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
